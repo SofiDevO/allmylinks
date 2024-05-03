@@ -1,0 +1,58 @@
+---
+import SocialLinks from "./SocialLinks.astro";
+import { userData } from "../data/userData.js";
+---
+
+<div class="profile__banner">
+  {
+    userData.map((data) => (
+      <>
+        <div class="img__container">
+          <img src={data.userPic} alt={data.userName} class="profile__img" />
+        </div>
+        <h1>{data.userName}</h1>
+        <p>{data.userDesc}</p>
+      </>
+    ))
+  }
+
+  <SocialLinks />
+</div>
+
+<style>
+  .profile__banner {
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 22dvh;
+    height: auto;
+    flex-direction: column;
+    padding-top: 3rem;
+    gap: .5rem;
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--text-bold-color);
+    }
+    p{
+      font-size: 1.6rem;
+    color: var(--button-hover);
+    }
+  }
+
+
+
+  .img__container {
+    border-radius: 50%;
+    border: 3px solid var(--border-color);
+    width: 15rem;
+    height: 15rem;
+    overflow: hidden;
+  }
+  .profile__img {
+    width: 100%;
+    object-fit: cover;
+  }
+</style>

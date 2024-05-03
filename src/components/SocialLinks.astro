@@ -1,0 +1,42 @@
+---
+import { socialLinks } from "../data/userData.js";
+---
+
+<div class="social">
+  {
+    socialLinks.map((icono) => (
+      <a
+        href={icono.socialUl}
+        target="_blank"
+        rel="nofollow noreferrer noopener"
+      >
+        <iconify-icon
+          icon={icono.socialIcon}
+          width="25"
+          height="25"
+          class="iconify"
+        />
+      </a>
+    ))
+  }
+</div>
+<style>
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+    max-width: 295px;
+
+  }
+  .iconify {
+    color: rgb(92, 92, 92);
+    transition: color 0.4s ease;
+  }
+  .iconify:hover {
+    color: var(--button-flat);
+  }
+  .iconify:active {
+    color: var(--button-active);
+  }
+</style>

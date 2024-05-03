@@ -1,0 +1,26 @@
+{
+  "name": "allmylinks",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource-variable/montserrat": "^5.0.19",
+    "astro": "^4.7.1"
+  },
+  "description": "```sh npm create astro@latest -- --template basics ```",
+  "main": "index.astro",
+  "devDependencies": {},
+  "keywords": [
+    "astro",
+    "allMyLinks",
+    "sofidev"
+  ],
+  "author": "SofiDev",
+  "license": "MIT"
+}

@@ -1,0 +1,22 @@
+---
+import "@fontsource-variable/montserrat";
+import Layout from "../layouts/Layout.astro";
+import ProfilePicture from "../components/ProfilePicture.astro";
+import Boton from "../components/Boton.astro";
+---
+
+<Layout title="Sofi Links">
+  <main>
+    <ProfilePicture/>
+	<Boton/>
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+</style>

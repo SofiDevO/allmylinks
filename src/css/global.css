@@ -1,0 +1,37 @@
+@import "./reset.css";
+:root{
+ --main-color: #2b007a;
+--bg-color: #f3f0ff;
+--cards:#d8ccff;
+
+--button-flat: #6a00ff;
+--button-hover: #770fff;
+--button-active: #6a00ff;
+--border-color: #9d70ff;
+
+--text-bold-color:#2b007a;
+--text-highligth:#770fff;
+
+--font-montserrat:'Montserrat Variable', sans-serif;
+/* Darkmode */
+--bg-color-dark: #18181b;
+}
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+
+}
+
+body{
+    background-color: var(--bg-color);
+    font-family: var(--font-montserrat);
+}
+
+@media (prefers-color-scheme: dark){
+    body{
+        background-color: var(--bg-color-dark) ;
+    }
+}
