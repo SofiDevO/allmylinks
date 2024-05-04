@@ -1,0 +1,78 @@
+---
+
+---
+
+<script>
+  const loader = document.querySelector(".heart__loader");
+  loader.style.display = "block";
+  const loadVideo = (iframe) => {
+    // Here you need to put your youtube vid. Channel ID
+    // My YT channel for example: https://www.youtube.com/channel/UC36_js-krsAHAEAWpEDhHtw
+    const cid = "UC36_js-krsAHAEAWpEDhHtw"; // So you need to put it here like this "UC36_js-krsAHAEAWpEDhHtw"
+    const channelURL = encodeURIComponent(
+      `https://www.youtube.com/feeds/videos.xml?channel_id=${cid}`
+    );
+    const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}`;
+
+    fetch(reqURL)
+      .then((response) => response.json())
+      .then((result) => {
+        const videoNumber = iframe.getAttribute("vnum");
+        const link = result.items[videoNumber].link;
+        const id = link.substr(link.indexOf("=") + 1);
+        iframe.setAttribute(
+          "src",
+          `https://youtube.com/embed/${id}?controls=1&autoplay=0`
+        );
+        // Ocultar el loader después de cargar el video
+        loader.style.display = "none";
+      })
+      .catch((error) => console.log("error", error));
+  };
+
+  document.addEventListener("DOMContentLoaded", (e) => {
+    const iframes = document.getElementsByClassName("latestVideoEmbed");
+    for (let i = 0, len = iframes.length; i < len; i++) {
+      loadVideo(iframes[i]);
+    }
+  });
+</script>
+
+<div class="vid__container">
+  <h2 class="vid__title">≥ My latest Video ❤️</h2>
+  <img class="heart__loader" src="public/loadcat.gif" alt="loader" />
+  <iframe
+    class="latestVideoEmbed"
+    vnum="0"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    id="ytchannel"></iframe>
+</div>
+
+<style>
+  .vid__container {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+  .latestVideoEmbed {
+    width: 100%;
+    max-width: 414px;
+    height: 267px;
+    min-height: 224px;
+    padding: 3rem;
+    min-width: 337px;
+  }
+  .vid__title {
+    padding-top: 2rem;
+  }
+
+  :global(.dark) .vid__container {
+    color: aqua;
+  }
+</style>
