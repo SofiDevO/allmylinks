@@ -3,8 +3,13 @@ const userData = [
     userName: "Sofia Osorio",
     userDesc: "Web Developer",
     userPic: "https://github.com/SofiDevO.png",
+    userPicDark: "/img/pedro_raccon.gif",
   },
 ];
+
+
+
+
 const socialLinks = [
   {
     socialName: "LinkedIn",

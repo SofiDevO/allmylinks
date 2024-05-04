@@ -27,16 +27,20 @@ import { socialLinks } from "../data/userData.js";
     justify-content: space-evenly;
     width: 60%;
     max-width: 295px;
-
   }
   .iconify {
     color: rgb(92, 92, 92);
     transition: color 0.4s ease;
+    &&:hover {
+      color: var(--button-flat);
+    }
+    &&:active {
+      color: var(--button-active);
+    }
   }
-  .iconify:hover {
-    color: var(--button-flat);
+  :global(.dark) .iconify{
+    color: var(--cards);
   }
-  .iconify:active {
-    color: var(--button-active);
-  }
+
+
 </style>

@@ -1,7 +1,7 @@
 @import "./reset.css";
 :root{
  --main-color: #2b007a;
---bg-color: #f3f0ff;
+--secundary-color: #f3f0ff;
 --cards:#d8ccff;
 
 --button-flat: #6a00ff;
@@ -26,12 +26,12 @@ html{
 }
 
 body{
-    background-color: var(--bg-color);
+    background-color: var(--secundary-color);
     font-family: var(--font-montserrat);
 }
 
-@media (prefers-color-scheme: dark){
-    body{
-        background-color: var(--bg-color-dark) ;
-    }
-}
+
+.dark body {
+    background-color: var(--bg-color-dark);
+    color: --secundary-color;
+  }

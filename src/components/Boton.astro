@@ -3,42 +3,56 @@ import { userLinks } from "../data/userData.js";
 ---
 
 <section class="botones">
-  {userLinks.map((data) => <a href={data.link} class="boton">  <iconify-icon
-    icon={data.icon}
-    width="25"
-    height="25"
-    class="iconify"
-  /><span>{data.title}</span></a>)}
+  {
+    userLinks.map((data) => (
+      <a href={data.link} class="boton">
+        {" "}
+        <>
+          <iconify-icon
+            icon={data.icon}
+            width="25"
+            height="25"
+            class="iconify"
+          />
+          <span>{data.title}</span>
+        </>
+      </a>
+    ))
+  }
 </section>
 
 <style>
-    .botones{
-        margin-top: 3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
-    }
-    .boton{
-        text-align: center;
-        display: flex;
-        gap: 3rem;
-        align-items: center;
-        min-height: 5dvh;
-        padding: 1rem 2rem;
-        max-width: 30rem;
-        background-color: var(--button-flat);
-        color: var(--bg-color);
-        font-size: 1.8rem;
-        text-decoration: none;
-        border-radius: 12px;
+  .botones {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .boton {
+    text-align: center;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    min-height: 5dvh;
+    padding: 1rem 2rem;
+    max-width: 30rem;
+    background-color: var(--button-flat);
+    color: var(--secundary-color);
+    font-size: 1.8rem;
+    text-decoration: none;
+    border-radius: 12px;
 
-        &&:hover{
-            background-color: var(--button-hover);
-        }
-        &&:active{
-
-            background-color: var(--button-active);
-        }
+    &&:hover {
+      background-color: var(--button-hover);
     }
+    &&:active {
+      background-color: var(--button-active);
+    }
+  }
+
+  :global(.dark) .boton{
+    background-color: transparent;
+    border:solid 2px var(--border-color);
+  }
 </style>

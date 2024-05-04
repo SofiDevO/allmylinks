@@ -1,14 +1,17 @@
 ---
 import "@fontsource-variable/montserrat";
 import Layout from "../layouts/Layout.astro";
-import ProfilePicture from "../components/ProfilePicture.astro";
 import Boton from "../components/Boton.astro";
+import ThemeIcon from "../components/ThemeIcon.astro";
+import ProfilePicture from "../components/Header.astro";
+import Header from "../components/Header.astro";
 ---
 
 <Layout title="Sofi Links">
+  <ThemeIcon/>
   <main>
-    <ProfilePicture/>
-	<Boton/>
+    <Header/>
+    <Boton/>
   </main>
 </Layout>
 
