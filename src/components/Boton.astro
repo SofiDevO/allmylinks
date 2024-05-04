@@ -5,7 +5,7 @@ import { userLinks } from "../data/userData.js";
 <section class="botones">
   {
     userLinks.map((data) => (
-      <a href={data.link} class="boton">
+      <a href={data.link} class="boton" data-astro-prefetch>
         {" "}
         <>
           <iconify-icon

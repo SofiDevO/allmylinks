@@ -1,24 +1,16 @@
 ---
-interface Props {
-  title: string;
-}
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../const";
 
 import "../../src/css/global.css";
-const { title } = Astro.props;
+import BaseHead from "../components/BaseHead.astro";
+
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script
-      src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"
-    ></script>
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <slot />
