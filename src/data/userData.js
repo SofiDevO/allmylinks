@@ -41,18 +41,18 @@ const socialLinks = [
 const userLinks = [
     {
         title: "Portfolio",
-        link:"# ",
+        link:"https://itssofi.dev/",
         icon:"ant-design:code-filled"
     },
     {
         title: "Sucríbete a mi canal",
-        link:"#",
+        link:"https://www.youtube.com/channel/UC36_js-krsAHAEAWpEDhHtw",
         icon:"mingcute:youtube-fill"
 
     },
     {
         title: "Únete a Discord",
-        link:"#",
+        link:"https://discord.com/invite/wjERezH2",
         icon:"ic:outline-discord"
     },
 ]

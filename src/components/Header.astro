@@ -1,20 +1,16 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
-
 import { userData } from "../data/userData.js";
-import ProfilePicture from "./ProfilePicture/ProfilePicture.jsx";
-import ThemeIcon from "./ThemeIcon.astro";
 ---
 
-
-<div class="profile__banner" >
+<div class="profile__banner">
+  <div id="img__container" class="img__container photo"></div>
   {
     userData.map((data) => (
-    <div class="img__container">
-            <img src={data.userPic} alt={data.userName} class="profile__img"/>
-        </div>
+      <>
         <h1>{data.userName}</h1>
         <p>{data.userDesc}</p>
+      </>
     ))
   }
   <SocialLinks />
@@ -49,18 +45,20 @@ import ThemeIcon from "./ThemeIcon.astro";
     }
   }
 
-.img__container {
-  border-radius: 50%;
-  border: 3px solid var(--border-color);
-  width: 15rem;
-  height: 15rem;
-  overflow: hidden;
-}
-.profile__img{
-    width: 100%;
-    object-fit: cover;
+  .img__container {
+    border-radius: 50%;
+    border: 3px solid var(--border-color);
+    width: 15rem;
+    height: 15rem;
+    overflow: hidden;
+    background: no-repeat center center / cover;
   }
 
-
-
+  .photo {
+    background-image: url(/img/sofi_light.jpg);
+  }
+  :global(.dark) .photo {
+    border: 3px solid aqua;
+    background-image: url(/img/sofi_dark.jpg);
+  }
 </style>

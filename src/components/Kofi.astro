@@ -1,0 +1,74 @@
+---
+import "../css/animations.css"
+---
+
+<script>
+  const tolltipMessage = document.querySelector(".kofi__tooltip");
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 3||
+      document.documentElement.scrollTop > 3
+    ) {
+    tolltipMessage.style.display = "block";
+    tolltipMessage.textContent = "Invítame un café ❤️";
+} else {
+    tolltipMessage.textContent = "Será la próxima Supongo 🥹";
+    setTimeout(() => {
+          tolltipMessage.style.display = "none";
+      }, 4000);
+    }
+  }
+</script>
+
+<article class="kofi__container">
+  <a
+    class="kofi__link"
+    href="https://ko-fi.com/S6S5IFKIG"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img class="kofi__img" src="/img/kofi.webp" alt="kofi-button" />
+  </a>
+  <span class="kofi__tooltip"></span>
+</article>
+
+<style>
+  .kofi__container {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    top: calc(90dvh - 17px);
+  }
+  .kofi__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    background: rgba(142, 81, 246, 0.546);
+    backdrop-filter: blur(20px);
+    border-radius: 50%;
+    padding: 2rem;
+    -webkit-animation: heartbeat 1.9s ease-in-out 5s infinite both;
+    animation: heartbeat 1.9s ease-in-out 5s infinite both;
+  }
+  .kofi__img {
+    width: 55px;
+    object-fit: cover;
+  }
+  .kofi__tooltip{
+    color: var(--main-color);
+    background-color: var(--cards);
+    padding: .6rem;
+    font-size: 1.5rem;
+</style>

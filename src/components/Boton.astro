@@ -5,8 +5,13 @@ import { userLinks } from "../data/userData.js";
 <section class="botones">
   {
     userLinks.map((data) => (
-      <a href={data.link} class="boton" data-astro-prefetch>
-        {" "}
+      <a
+        href={data.link}
+        class="boton"
+        data-astro-prefetch
+        target="_blank"
+        rel="nofollow noreferrer noopener"
+      >
         <>
           <iconify-icon
             icon={data.icon}
@@ -55,15 +60,14 @@ import { userLinks } from "../data/userData.js";
     background: transparent;
     border: solid 2px var(--border-color);
     color: aqua;
-
   }
   :global(.dark) .boton:hover {
-      background: rgb(179, 156, 255);
-      background: radial-gradient(
-        circle,
-        rgba(179, 156, 255, 1) 0%,
-        rgba(124, 25, 252, 1) 100%
-      );
-      color: black;
-    }
+    background: rgb(179, 156, 255);
+    background: radial-gradient(
+      circle,
+      rgba(179, 156, 255, 1) 0%,
+      rgba(124, 25, 252, 1) 100%
+    );
+    color: black;
+  }
 </style>
