@@ -59,9 +59,37 @@ const userLinks = [
 ]
 ```
 
-5. Once you have updated the information of the links in the `data.js` file, the changes will be automatically reflected in your application when you rebuild or run it.
+5. Once you have updated the information of the links in the `userData.js` file, the changes will be automatically reflected in your application when you rebuild or run it.
 
 Remember to ensure you provide valid links and that the icons used are available in the icon library you are using in your project.
+
+### Including Icons
+
+To import icons into your project, we use the Iconify CDN and utilize the `icon` attribute of each Iconify icon in the `userLinks`. For example, to use an icon of React:
+
+```html
+<iconify-icon icon="logos:react" width="27" height="27"></iconify-icon>
+```
+
+In our `data.js`, we only need to specify the icon identifier, like this:
+
+```javascript
+{
+    title: "React",
+    link: "https://reactjs.org/",
+    icon: "logos:react"
+}
+```
+
+Here's how you can add the Iconify script to the `<head>` section of your project:
+
+```html
+<head>
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+```
+
+Once you include this script, you can use any Iconify icon by specifying its identifier in the `icon` attribute. Make sure to replace `"logos:react"` with the appropriate icon identifier for the icons you want to use. You can find a variety of icons available on the [Iconify logos page](https://icon-sets.iconify.design/logos/).
 #### Customization
 
 Feel free to modify this project to suit your needs! Whether it's changing the layout, adding new features, or tweaking the styles, let your creativity flow.
