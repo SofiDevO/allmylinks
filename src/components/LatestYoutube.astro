@@ -3,50 +3,58 @@
 ---
 
 <script>
-  const loader = document.querySelector(".heart__loader");
-  loader.style.display = "block";
-  const loadVideo = (iframe) => {
-    // Here you need to put your youtube vid. Channel ID
-    // My YT channel for example: https://www.youtube.com/channel/UC36_js-krsAHAEAWpEDhHtw
-    const cid = "UC36_js-krsAHAEAWpEDhHtw"; // So you need to put it here like this "UC36_js-krsAHAEAWpEDhHtw"
-    const channelURL = encodeURIComponent(
-      `https://www.youtube.com/feeds/videos.xml?channel_id=${cid}`
-    );
-    const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}`;
+  document.addEventListener("DOMContentLoaded", () => {
+    const loader = document.querySelector(".heart__loader");
+    loader.style.display = "block";
 
-    fetch(reqURL)
-      .then((response) => response.json())
-      .then((result) => {
-        const videoNumber = iframe.getAttribute("vnum");
-        const link = result.items[videoNumber].link;
-        const id = link.substr(link.indexOf("=") + 1);
-        iframe.setAttribute(
-          "src",
-          `https://youtube.com/embed/${id}?controls=1&autoplay=0`
-        );
-        // Ocultar el loader después de cargar el video
-        loader.style.display = "none";
-      })
-      .catch((error) => console.log("error", error));
-  };
+    const loadVideo = async (iframe) => {
+      const cid = "UC36_js-krsAHAEAWpEDhHtw"; //this is the user ID from your Youtube channel URL
+      const API_key = "&api_key=wmbjfv0ybbzjsaceaojxrbm9aaelzzq2bbe7mgws"; //in order to get your free public API_key, you will need to create an acc. in https://rss2json.com/
+      const channelURL = encodeURIComponent(`https://www.youtube.com/feeds/videos.xml?channel_id=${cid}`);
+      const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}&api_key=${API_key}`;
 
-  document.addEventListener("DOMContentLoaded", (e) => {
+      try {
+        const response = await fetch(reqURL);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        if (result.items && result.items.length > 0) {
+          const videoNumber = iframe.getAttribute("vnum");
+          const link = result.items[videoNumber].link;
+          const id = link.split("v=")[1];
+          iframe.setAttribute("src", `https://youtube.com/embed/${id}?controls=1&autoplay=0`);
+          loader.style.display = "none"; // Hide the loader after loading the video
+        } else {
+          throw new Error("No videos found in the feed.");
+        }
+      } catch (error) {
+        console.error("Error loading video:", error);
+        loader.style.display = "none"; // Hide loader in case of error
+      }
+    };
+
     const iframes = document.getElementsByClassName("latestVideoEmbed");
-    for (let i = 0, len = iframes.length; i < len; i++) {
-      loadVideo(iframes[i]);
+    if (iframes.length > 0) {
+      loadVideo(iframes[0]);
     }
   });
 </script>
 
 <div class="vid__container">
-  <h2 class="vid__title">≥ My latest Video ❤️</h2>
+  <h2 class="vid__title">My latest Video ❤️</h2>
   <img class="heart__loader" src="./img/loadcat.gif" alt="loader" />
   <iframe
     class="latestVideoEmbed"
     vnum="0"
+    width="560"
+    height="315"
     frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen
-    id="ytchannel"></iframe>
+    id="ytchannel"
+    title="YouTube video player"></iframe>
 </div>
 
 <style>
@@ -63,8 +71,8 @@
   }
   .latestVideoEmbed {
     width: 100%;
-    max-width: 414px;
-    height: 267px;
+    max-width: 560px;
+    height: 315px;
     min-height: 224px;
     padding: 3rem;
     min-width: 337px;
