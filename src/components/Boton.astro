@@ -12,6 +12,7 @@ import { userLinks } from "../data/userData.js";
         target="_blank"
         rel="nofollow noreferrer noopener"
       >
+        {" "}
         <>
           <iconify-icon
             icon={data.icon}
@@ -32,7 +33,10 @@ import { userLinks } from "../data/userData.js";
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
+
+    width: 100%;
   }
   .boton {
     text-align: center;
@@ -47,6 +51,9 @@ import { userLinks } from "../data/userData.js";
     font-size: 1.8rem;
     text-decoration: none;
     border-radius: 12px;
+    min-width: 30rem;
+    width: 100%;
+    max-width: 32%;
 
     &&:hover {
       background-color: var(--button-hover);
@@ -54,6 +61,7 @@ import { userLinks } from "../data/userData.js";
     &&:active {
       background-color: var(--button-active);
     }
+
   }
 
   :global(.dark) .boton {

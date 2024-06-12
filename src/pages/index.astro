@@ -3,17 +3,20 @@ import "@fontsource-variable/montserrat";
 import Layout from "../layouts/Layout.astro";
 import Boton from "../components/Boton.astro";
 import ThemeIcon from "../components/ThemeIcon.astro";
-import ProfilePicture from "../components/Header.astro";
-import Header from "../components/Header.astro";
+import ProfilePicture from "../components/Profile.astro";
 import LatestYoutube from "../components/LatestYoutube.astro";
+import Profile from "../components/Profile.astro";
 ---
 
 <Layout>
-  <ThemeIcon/>
+  <ThemeIcon />
   <main>
-    <Header/>
-    <Boton/>
-    <LatestYoutube/>
+    <Profile/>
+    <Boton />
+
+    <LatestYoutube />
+
+
   </main>
 </Layout>
 
@@ -23,5 +26,6 @@ import LatestYoutube from "../components/LatestYoutube.astro";
     flex-direction: column;
     align-items: center;
     width: 100%;
+    padding-top: 7rem;
   }
 </style>

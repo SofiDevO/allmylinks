@@ -1,9 +1,20 @@
 ---
-import "../css/animations.css"
+import "../css/animations.css";
 ---
 
 <script>
-  const tolltipMessage = document.querySelector(".kofi__tooltip");
+  const tooltipMessage = document.querySelector(".kofi__tooltip");
+  const cofiLink = document.querySelector(".kofi__link");
+
+  cofiLink.addEventListener("mouseover", (event) => {
+    tooltipMessage.classList.add("tooltip__animation");
+
+    tooltipMessage.textContent = "Invítame un café ❤️";
+  });
+  cofiLink.addEventListener("mouseleave", (event) => {
+    tooltipMessage.classList.remove("tooltip__animation");
+    tooltipMessage.textContent = "";
+  });
 
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function () {
@@ -11,16 +22,15 @@ import "../css/animations.css"
   };
 
   function scrollFunction() {
-    if (
-      document.body.scrollTop > 3||
-      document.documentElement.scrollTop > 3
-    ) {
-    tolltipMessage.style.display = "block";
-    tolltipMessage.textContent = "Invítame un café ❤️";
-} else {
-    tolltipMessage.textContent = "Será la próxima Supongo 🥹";
-    setTimeout(() => {
-          tolltipMessage.style.display = "none";
+    if (document.body.scrollTop > 3 || document.documentElement.scrollTop > 3) {
+      tooltipMessage.classList.add("tooltip__animation");
+
+      tooltipMessage.textContent = "Invítame un café ❤️";
+    } else {
+      tooltipMessage.textContent = "Será la próxima Supongo 🥹";
+      setTimeout(() => {
+        tooltipMessage.classList.remove("tooltip__animation");
+        tooltipMessage.textContent = "";
       }, 4000);
     }
   }
@@ -47,7 +57,10 @@ import "../css/animations.css"
     justify-content: flex-start;
     position: fixed;
     top: calc(90dvh - 17px);
+    right: 40%;
+    min-width: 40rem;
   }
+
   .kofi__link {
     display: flex;
     align-items: center;
@@ -55,7 +68,7 @@ import "../css/animations.css"
     width: 60px;
     height: 60px;
     overflow: hidden;
-    background: rgba(142, 81, 246, 0.546);
+    background: #8e51f68b;
     backdrop-filter: blur(20px);
     border-radius: 50%;
     padding: 2rem;
@@ -66,9 +79,18 @@ import "../css/animations.css"
     width: 55px;
     object-fit: cover;
   }
-  .kofi__tooltip{
+  .kofi__tooltip {
     color: var(--main-color);
-    background-color: var(--cards);
-    padding: .6rem;
     font-size: 1.5rem;
+    border-radius: 12px;
+    transition-property: transform;
+    transition-duration: 0.5s ;
+    transform: scaleX(0.4);
+    transform-origin: 100% 100%;
+    background-color: var(--cards);
+  }
+  .tooltip__animation {
+    padding: 6px 5px;
+    transform: scaleX(1);
+  }
 </style>
