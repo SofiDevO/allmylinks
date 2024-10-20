@@ -2,7 +2,7 @@
 :root{
  --main-color: #2b007a;
 --secundary-color: #e4e2ea;
---cards:#d8ccff;
+--cards:#43fdfd;
 
 --button-flat: #6a00ff;
 --button-hover: #770fff;
@@ -14,7 +14,7 @@
 
 --font-montserrat:'Montserrat Variable', sans-serif;
 /* Darkmode */
---bg-color-dark: #18181b;
+--bg-color-dark: #0b0b0b;
 }
 *{
     box-sizing: border-box;
@@ -26,12 +26,12 @@ html{
 }
 
 body{
-    background-color: var(--secundary-color);
+    background: radial-gradient(circle, rgba(7,26,55,1) 49%, rgba(38,7,79,1) 98%);
     font-family: var(--font-montserrat);
 }
 
 
 .dark body {
-    background-color: var(--bg-color-dark);
+
     color: --secundary-color;
   }

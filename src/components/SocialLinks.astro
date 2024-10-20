@@ -42,6 +42,7 @@ import { socialLinks } from "../data/userData.js";
       min-height: 48px;
       gap: 10px;
     }
+
     @media screen and (min-width: 768px) {
       span {
         display: none;
@@ -74,7 +75,7 @@ import { socialLinks } from "../data/userData.js";
   }
 
   .iconify {
-    color: rgb(92, 92, 92);
+    color: rgb(60, 60, 60);
     transition: color 0.4s ease;
     &&:hover {
       color: var(--button-flat);
@@ -86,4 +87,11 @@ import { socialLinks } from "../data/userData.js";
   :global(.dark) .iconify {
     color: var(--cards);
   }
+  :global(.dark) .social__btn {
+      color: rgb(0, 183, 170);
+    }
+    :global(.dark)  .social__btn:hover span {
+      color: black;
+      background: rgb(80, 251, 231);
+    }
 </style>

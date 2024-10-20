@@ -18,7 +18,7 @@ const socialLinks = [
   },
   {
     socialName: "GitHub",
-    socialUl: "#",
+    socialUl: "https://github.com/SofiDevO/allmylinks",
     socialIcon: "fa6-brands:github-alt",
   },
   {

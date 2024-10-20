@@ -29,8 +29,8 @@ import "../css/animations.css";
     } else {
       tooltipMessage.textContent = "Será la próxima Supongo 🥹";
       setTimeout(() => {
-        tooltipMessage.classList.remove("tooltip__animation");
         tooltipMessage.textContent = "";
+        tooltipMessage.classList.remove("tooltip__animation");
       }, 4000);
     }
   }
@@ -57,7 +57,7 @@ import "../css/animations.css";
     justify-content: flex-start;
     position: fixed;
     top: calc(90dvh - 17px);
-    right: 40%;
+    right: 9%;
     min-width: 40rem;
   }
 
@@ -84,7 +84,7 @@ import "../css/animations.css";
     font-size: 1.5rem;
     border-radius: 12px;
     transition-property: transform;
-    transition-duration: 0.5s ;
+    transition-duration: 0.5s;
     transform: scaleX(0.4);
     transform-origin: 100% 100%;
     background-color: var(--cards);

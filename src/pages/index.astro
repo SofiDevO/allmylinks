@@ -2,26 +2,32 @@
 import "@fontsource-variable/montserrat";
 import Layout from "../layouts/Layout.astro";
 import Boton from "../components/Boton.astro";
-import ThemeIcon from "../components/ThemeIcon.astro";
 import LatestYoutube from "../components/LatestYoutube.astro";
 import Profile from "../components/Profile.astro";
+import Kofi from "@src/components/Kofi.astro";
 ---
 
 <Layout>
-  <ThemeIcon />
   <main>
+
     <Profile />
     <Boton />
     <LatestYoutube />
+    <Kofi />
   </main>
 </Layout>
 
-<style>
+<style is:global>
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-top: 7rem;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--secundary-color);
+  }
+  .dark main {
+    background-color: var(--bg-color-dark);
   }
 </style>
