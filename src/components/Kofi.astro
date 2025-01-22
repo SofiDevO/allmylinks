@@ -8,7 +8,7 @@ import "../css/animations.css";
 
   cofiLink.addEventListener("mouseover", (event) => {
     tooltipMessage.classList.add("tooltip__animation");
-
+    tooltipMessage.classList.remove("tooltipMessage-secondary");
     tooltipMessage.textContent = "Invítame un café ❤️";
   });
   cofiLink.addEventListener("mouseleave", (event) => {
@@ -24,12 +24,14 @@ import "../css/animations.css";
   function scrollFunction() {
     if (document.body.scrollTop > 3 || document.documentElement.scrollTop > 3) {
       tooltipMessage.classList.add("tooltip__animation");
-
+      tooltipMessage.classList.remove("tooltipMessage-secondary");
       tooltipMessage.textContent = "Invítame un café ❤️";
     } else {
       tooltipMessage.textContent = "Será la próxima Supongo 🥹";
+      tooltipMessage.classList.add("tooltipMessage-secondary");
       setTimeout(() => {
         tooltipMessage.textContent = "";
+        tooltipMessage.classList.remove("tooltipMessage-secondary");
         tooltipMessage.classList.remove("tooltip__animation");
       }, 4000);
     }
@@ -55,10 +57,11 @@ import "../css/animations.css";
     gap: 0.5rem;
     align-items: center;
     justify-content: flex-start;
-    position: fixed;
-    top: calc(90dvh - 17px);
-    right: 9%;
-
+    position: sticky;
+    bottom: 5rem;
+    left: 90vw;
+    height: 100%;
+    width: fit-content;
   }
 
   .kofi__link {
@@ -81,13 +84,18 @@ import "../css/animations.css";
   }
   .kofi__tooltip {
     color: var(--main-color);
+    background-color: var(--cards);
     font-size: 1.5rem;
     border-radius: 12px;
     transition-property: transform;
     transition-duration: 0.5s;
     transform: scaleX(0.4);
     transform-origin: 100% 100%;
-    background-color: var(--cards);
+    position: absolute;
+    left: -17rem;
+  }
+  .tooltipMessage-secondary{
+    left: -22rem;
   }
   .tooltip__animation {
     padding: 6px 5px;

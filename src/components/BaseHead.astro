@@ -1,12 +1,13 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-
+import "@css/global.css";
 interface Props {
   title: string;
   description: string;
   image?: string;
 }
+
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 

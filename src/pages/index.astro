@@ -1,5 +1,4 @@
 ---
-import "@fontsource-variable/montserrat";
 import Layout from "../layouts/Layout.astro";
 import Boton from "../components/Boton.astro";
 import LatestYoutube from "../components/LatestYoutube.astro";
@@ -9,26 +8,9 @@ import Kofi from "@src/components/Kofi.astro";
 
 <Layout>
   <main>
-
     <Profile />
     <Boton />
     <LatestYoutube />
-    <Kofi />
   </main>
+  <Kofi />
 </Layout>
-
-<style is:global>
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    background-color: var(--secundary-color);
-    min-height: 100dvh;
-  }
-  .dark main {
-    background-color: var(--bg-color-dark);
-  }
-</style>

@@ -10,16 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^3.5.0",
-    "@astrojs/rss": "^4.0.6",
+    "@astrojs/rss": "^4.0.11",
     "@fontsource-variable/montserrat": "^5.0.19",
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.0",
-    "astro": "^4.10.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "astro": "^5.1.8"
   },
-  "description": "```sh npm create astro@latest -- --template basics ```",
+  "description": "A simple Astro project to showcase your  links",
   "main": "index.astro",
   "keywords": [
     "astro",

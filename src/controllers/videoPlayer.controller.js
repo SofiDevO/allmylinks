@@ -3,7 +3,7 @@ const channelId = "UC36_js-krsAHAEAWpEDhHtw"; // Youtube Channel ID
 
 const loader = document.querySelector(".heart__loader");
 const initializeModal = (iframe, videoData) => {
-  const videoNumber = iframe.getAttribute("vnum");
+  const videoNumber = iframe.getAttribute("data-vnum");
   const video = videoData[videoNumber];
   const videoId = video.link.split("v=")[1];
   const embeddUrl = `https://youtube.com/embed/${videoId}?controls=1&autoplay=1`;

@@ -12,10 +12,9 @@
   <img class="heart__loader" src="./img/loadcat.gif" alt="loader" />
   <iframe
     class="latestVideoEmbed"
-    vnum="0"
+    data-vnum="0"
     width="560"
     height="315"
-    frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen
@@ -26,25 +25,24 @@
 <style>
   .vid__container {
     width: 100%;
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 2rem;
     font-weight: bolder;
-    min-height: 52dvh;
     height: auto;
+    padding: 1rem;
   }
   .latestVideoEmbed {
-    width: 100%;
-    max-width: 560px;
-    height: 315px;
-    min-height: 224px;
-    padding: 3rem;
-    min-width: 337px;
+    border-width: 0px;
+    overflow: hidden;
+    border-radius:12px;
+    width: calc(100% - 3rem);
+    min-height: 30rem;
+    min-width: 303px;
   }
   .vid__title {
-    padding-top: 2rem;
+    margin: 1rem 0;
   }
 
   :global(.dark) .vid__container {

@@ -1,37 +1,57 @@
 @import "./reset.css";
-:root{
- --main-color: #2b007a;
---secundary-color: #e4e2ea;
---cards:#43fdfd;
+@import "@fontsource-variable/montserrat";
 
---button-flat: #6a00ff;
---button-hover: #770fff;
---button-active: #6a00ff;
---border-color: #9d70ff;
+:root {
+    --main-color: #2b007a;
+    --bg-color: #e4e2ea;
+    --cards: #d8ccff;
 
---text-bold-color:#2b007a;
---text-highligth:#770fff;
+    --button-flat: #6a00ff;
+    --button-hover: #770fff;
+    --button-active: #6a00ff;
+    --border-color: #9d70ff;
 
---font-montserrat:'Montserrat Variable', sans-serif;
-/* Darkmode */
---bg-color-dark: #0b0b0b;
+    --text-bold-color: #2b007a;
+    --text-highligth: #770fff;
+
+    --drop-shadow: 0px 4px 4px rgba(0, 0, 0, 0.333);
+
+    --font-montserrat: 'Montserrat Variable', sans-serif;
+
+    /* Darkmode */
+
 }
-*{
+
+.dark {
+    --drop-shadow: 0px 4px 4px rgba(112, 112, 112, 0.281);
+    --bg-color: #0b0b0b;
+
+}
+
+* {
     box-sizing: border-box;
 }
 
-html{
+html {
     font-size: 62.5%;
 
 }
 
-body{
-    background: radial-gradient(circle, rgba(7,26,55,1) 49%, rgba(38,7,79,1) 98%);
+body {
+    background: var(--bg-color);
     font-family: var(--font-montserrat);
 }
 
 
-.dark body {
-
-    color: --secundary-color;
-  }
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100dvh;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: var(--drop-shadow);
+    border-radius: 12px;
+    padding-bottom: 2rem;
+}
