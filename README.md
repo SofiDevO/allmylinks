@@ -6,6 +6,13 @@
 ![Portada](/public/img/portada.png)
 #### Description
 
+
+## Use this template by running:
+
+```bash
+npm create astro@latest -- --template SofiDevO/allmylinks
+``` 
+
 Welcome to Share Your Links! This project is powered by Astro and CSS magic. If you're looking to create a sleek and customizable page to showcase all your important links, you're in the right place!
 
 You can find this template in [Astro Themes](https://portal.astro.build/themes/shareyourlinks/)
