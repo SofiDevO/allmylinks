@@ -10,9 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.11",
+    "@astrojs/rss": "^4.0.19",
     "@fontsource-variable/montserrat": "^5.0.19",
-    "astro": "^5.1.8"
+    "astro": "^7.2.7"
   },
   "description": "A simple Astro project to showcase your  links",
   "main": "index.astro",

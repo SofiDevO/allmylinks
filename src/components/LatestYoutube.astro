@@ -3,23 +3,17 @@
 ---
 
 <script>
-  import {loadVideo} from "../controllers/videoPlayer.controller";
-
+  import { loadVideo } from "@src/controllers/videoPlayer.controller";
+  const iframe = document.getElementById("ytchannel");
+  if (iframe) {
+    loadVideo(iframe);
+  }
 </script>
-
 <div class="vid__container">
-  <h2 class="vid__title">My latest Video ❤️</h2>
+  <h2 class="vid__title">≥ My latest Video ❤️</h2>
   <img class="heart__loader" src="./img/loadcat.gif" alt="loader" />
-  <iframe
-    class="latestVideoEmbed"
-    data-vnum="0"
-    width="560"
-    height="315"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen
-    id="ytchannel"
-    title="YouTube video player"></iframe>
+  <iframe data-vnum="0" class="latestVideoEmbed" allowfullscreen id="ytchannel">
+  </iframe>
 </div>
 
 <style>
@@ -36,7 +30,7 @@
   .latestVideoEmbed {
     border-width: 0px;
     overflow: hidden;
-    border-radius:12px;
+    border-radius: 12px;
     width: calc(100% - 3rem);
     min-height: 30rem;
     min-width: 303px;
