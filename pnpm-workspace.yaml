@@ -1,5 +1,9 @@
+packages:
+  - '.'
+
 allowBuilds:
   esbuild: false
   sharp: false
 minimumReleaseAgeExclude:
   - astro@7.2.7
+
