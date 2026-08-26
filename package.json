@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "packageManager": "pnpm@11.24.0",
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
     "@fontsource-variable/montserrat": "^5.0.19",
